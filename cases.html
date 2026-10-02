@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-font="base" data-contrast="normal">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>⑥ 案例拆解 · 适老化设计手册</title>
+<meta name="description" content="适老化设计好坏对比案例:验证码、诱导弹窗、图标导航、日期选择、起夜动线改造,以及微信关怀模式等真实产品拆解。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230a5c42'/%3E%3Ctext x='50' y='70' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3E适%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header class="site-header">
+  <div class="topbar wrap">
+    <p class="brand"><a href="index.html">适老化设计手册<span class="brand-en">Age-Friendly Design</span></a></p>
+    <div class="controls" role="group" aria-label="阅读设置(这也是本站的适老化示范)">
+      <span class="controls-label">字号</span>
+      <button type="button" class="ctrl-btn font-btn" data-font="base" aria-pressed="true">标准</button>
+      <button type="button" class="ctrl-btn font-btn" data-font="large" aria-pressed="false">大</button>
+      <button type="button" class="ctrl-btn font-btn" data-font="xlarge" aria-pressed="false">特大</button>
+      <button type="button" class="ctrl-btn" id="contrastBtn" aria-pressed="false">高对比模式</button>
+    </div>
+  </div>
+  <nav class="site-nav wrap" aria-label="章节导航">
+    <a href="index.html">总览</a>
+    <a href="aging.html">① 认识用户</a>
+    <a href="principles.html">② 设计原则</a>
+    <a href="digital.html">③ 数字产品</a>
+    <a href="space.html">④ 空间环境</a>
+    <a href="standards.html">⑤ 标准规范</a>
+    <a href="cases.html" aria-current="page">⑥ 案例拆解</a>
+    <a href="process.html">⑦ 流程自查</a>
+  </nav>
+</header>
+<p id="liveStatus" class="visually-hidden" aria-live="polite"></p>
+
+<main id="main">
+  <div class="wrap">
+    <div class="page-head">
+      <span class="kicker">第六章 · 案例拆解</span>
+      <h1>案例拆解:每一条规则的反面,都有一个真实故事</h1>
+      <p class="lede">原则容易背,判断难练习。本章用固定的「三问法」拆解典型场景:谁被排除了?违反哪条原则?最小改法是什么?左红右绿的对比图可以直接用于团队评审。</p>
+    </div>
+
+    <article>
+      <div class="toc">
+        <p class="toc-title">本章导读</p>
+        <ol>
+          <li><a href="#c1">案例一:图形验证码——防机器人,不防老人</a></li>
+          <li><a href="#c2">案例二:诱导弹窗——「残忍拒绝」的心理学</a></li>
+          <li><a href="#c3">案例三:图标导航——猜谜不是交互</a></li>
+          <li><a href="#c4">案例四:日期选择器——小日历与大滚轮</a></li>
+          <li><a href="#c5">案例五:起夜动线改造——三百元的空间适老化</a></li>
+          <li><a href="#c6">真实产品:微信关怀模式与系统级适老</a></li>
+        </ol>
+      </div>
+
+      <section id="c1">
+        <h2><span class="h2-num">案例一.</span>图形验证码:防机器人,不防老人</h2>
+        <div class="do-dont">
+          <div class="panel panel-bad">
+            <div class="panel-head">反例</div>
+            <div class="panel-body">
+              <div class="mock-bad">
+                <div class="m-head">某平台登录</div>
+                <div class="m-body">
+                  <div class="m-card">
+                    <span class="m-label">验证码</span>
+                    <span class="m-captcha"><span class="m-captcha-code">7Ax4</span></span>
+                  </div>
+                  <p class="m-tip" style="font-size:12px;color:#9ca3af">看不清?换一张</p>
+                  <div class="m-btn-main" aria-hidden="true">登录</div>
+                </div>
+              </div>
+              <ul>
+                <li>扭曲噪点图形码,对老花与白内障用户近乎无解</li>
+                <li>「换一张」是 12px 灰色小字,几乎不可点</li>
+                <li>连错 3 次锁定账户,失败即绝路</li>
+              </ul>
+            </div>
+          </div>
+          <div class="panel panel-good">
+            <div class="panel-head">正解</div>
+            <div class="panel-body">
+              <div class="m-head">同平台 · 适老版登录</div>
+              <div class="m-body">
+                <div class="m-card">
+                  <span class="m-label">短信验证码已发送至 138****5678</span>
+                  <span class="m-value" style="font-size:1.3rem;letter-spacing:0.3em">6 位大数字输入</span>
+                </div>
+                <span class="m-btn" style="display:block;text-align:center;border:2px solid var(--line-strong);border-radius:10px;font-weight:800;margin-top:6px">听语音播报验证码</span>
+                <div class="m-btn-primary" style="display:block;text-align:center;border-radius:10px;margin-top:10px">登录</div>
+              </div>
+              <ul>
+                <li>用短信 / 行为验证替代图形码(工信部规范明确鼓励)</li>
+                <li>语音播报兜底视力障碍场景</li>
+                <li>失败不锁定,可重试 + 人工客服入口</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="callout callout-tip">
+          <span class="callout-title">三问拆解</span>
+          <p><strong>谁被排除?</strong>视力衰退者、手抖者(小字刷新点不中)。<strong>违反哪条?</strong>可感知(对比度/字号)、容错(失败即锁定)。<strong>最小改法?</strong>不必重做风控——保留图形码,但把替代通道(短信/语音)放到同等位置,失败不锁死。<strong>验证的目的是防机器人,不是考眼力。</strong></p>
+        </div>
+      </section>
+
+      <section id="c2">
+        <h2><span class="h2-num">案例二.</span>诱导弹窗:「残忍拒绝」的心理学</h2>
+        <div class="do-dont">
+          <div class="panel panel-bad">
+            <div class="panel-head">反例</div>
+            <div class="panel-body">
+              <div class="m-modal mock-bad">
+                <p class="m-modal-title">🎉 恭喜获得新人现金红包</p>
+                <p class="m-modal-text">24小时后将过期作废,领取需开启消息通知并授权通讯录</p>
+                <div class="m-modal-actions">
+                  <span class="m-btn" style="font-size:0.8rem;padding:6px 10px;color:#9ca3af">残忍拒绝</span>
+                  <span class="m-btn-primary">立即开启</span>
+                </div>
+              </div>
+              <ul>
+                <li>「残忍拒绝」:把正常选择道德化,制造心理绑架</li>
+                <li>红包限时倒计时:利用紧迫感压制思考</li>
+                <li>授权通讯录与领红包捆绑:过度索权</li>
+                <li>按钮一大一小、一实一虚,操纵视觉焦点</li>
+              </ul>
+            </div>
+          </div>
+          <div class="panel panel-good">
+            <div class="panel-head">正解</div>
+            <div class="panel-body">
+              <div class="m-modal">
+                <p class="m-modal-title">开启消息通知?</p>
+                <p class="m-modal-text">开启后,缴费成功、账户变动会在这里提醒你。不开启不影响使用。</p>
+                <div class="m-modal-actions">
+                  <span class="m-btn m-btn-ghost">暂时不用</span>
+                  <span class="m-btn m-btn-primary">开启通知</span>
+                </div>
+              </div>
+              <ul>
+                <li>标题是一个问句,用户在做「自己的决定」</li>
+                <li>说明收益 + 明示「不开也没损失」</li>
+                <li>「暂时不用」平视、不带评判,两个按钮同等体量</li>
+                <li>无倒计时——重要的决定不需要秒答</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="callout callout-tip">
+          <span class="callout-title">三问拆解</span>
+          <p><strong>谁被排除?</strong>所有对「操纵式文案」识别力弱的用户——老人是重灾区,因为他们的经验里「按钮=正式承诺」,一次误授权可能带来真实损失。<strong>违反哪条?</strong>尊重(原则五)、可理解。<strong>最小改法?</strong>把按钮文案改成动作本身(「开启通知/暂时不用」),删倒计时,拆捆绑授权。工信部适老规范明确禁止诱导类按钮,这不是风格问题,是合规问题。</p>
+        </div>
+      </section>
+
+      <section id="c3">
+        <h2><span class="h2-num">案例三.</span>图标导航:猜谜不是交互</h2>
+        <div class="do-dont">
+          <div class="panel panel-bad">
+            <div class="panel-head">反例</div>
+            <div class="panel-body">
+              <div class="mock-bad">
+                <div class="m-head">某应用首页</div>
+                <div class="m-body">
+                  <div style="display:flex;justify-content:space-around;text-align:center;padding:10px 0">
+                    <div><div aria-hidden="true" style="font-size:1.6rem">🧩</div><span style="font-size:11px;color:#9ca3af">服务</span></div>
+                    <div><div aria-hidden="true" style="font-size:1.6rem">📎</div><span style="font-size:11px;color:#9ca3af">应用</span></div>
+                    <div><div aria-hidden="true" style="font-size:1.6rem">💠</div><span style="font-size:11px;color:#9ca3af">生活</span></div>
+                    <div><div aria-hidden="true" style="font-size:1.6rem">🎫</div><span style="font-size:11px;color:#9ca3af">权益</span></div>
+                  </div>
+                  <p class="m-tip" style="font-size:12px;color:#9ca3af">更多功能请探索发现</p>
+                </div>
+              </div>
+              <ul>
+                <li>抽象隐喻图标,不点开永远不知道是什么</li>
+                <li>11px 灰色标签,视力衰退者无法阅读</li>
+                <li>「服务/应用/生活/权益」四个词高度同义,像猜谜</li>
+                <li>功能藏在「探索发现」,要求用户主动漫游</li>
+              </ul>
+            </div>
+          </div>
+          <div class="panel panel-good">
+            <div class="panel-head">正解</div>
+            <div class="panel-body">
+              <div class="m-head">同应用 · 适老版首页</div>
+              <div class="m-body">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:6px 0">
+                  <div style="border:1.5px solid var(--line);border-radius:10px;padding:14px;text-align:center;font-weight:800">🏥 医院挂号</div>
+                  <div style="border:1.5px solid var(--line);border-radius:10px;padding:14px;text-align:center;font-weight:800">💡 交电费</div>
+                  <div style="border:1.5px solid var(--line);border-radius:10px;padding:14px;text-align:center;font-weight:800">📱 充话费</div>
+                  <div style="border:1.5px solid var(--line);border-radius:10px;padding:14px;text-align:center;font-weight:800">🧑‍⚕️ 联系客服</div>
+                </div>
+              </div>
+              <ul>
+                <li>任务词汇命名:「交电费」而不是「生活缴费 +」</li>
+                <li>图标 + 大字标签双通道,标签是主信息</li>
+                <li>大卡片可点区,不依赖精准点击小图标</li>
+                <li>高频功能固定位置,靠位置记忆建立安全感</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="callout callout-tip">
+          <span class="callout-title">三问拆解</span>
+          <p><strong>谁被排除?</strong>缺乏移动应用「图标隐喻词汇量」的用户——这是文化经验问题,与智力无关。<strong>违反哪条?</strong>可理解(挂靠经验)、可感知(标签字号)。<strong>最小改法?</strong>给每个图标补大字标签、把抽象分类改为任务词。注意:改完后<strong>位置尽量不动</strong>,老人靠肌肉记忆导航,「变好看了」不如「还在老地方」。</p>
+        </div>
+      </section>
+
+      <section id="c4">
+        <h2><span class="h2-num">案例四.</span>日期选择器:小日历与大滚轮</h2>
+        <div class="do-dont">
+          <div class="panel panel-bad">
+            <div class="panel-head">反例</div>
+            <div class="panel-body">
+              <div class="mock-bad">
+                <div class="m-head">选择就诊日期</div>
+                <div class="m-body">
+                  <div style="border:1.5px solid var(--line);border-radius:10px;padding:10px;margin-block:8px">
+                    <p style="text-align:center;font-weight:700;font-size:0.8rem;margin:0 0 6px">2026年9月</p>
+                    <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center;font-size:11px;color:#6b7280">
+                      <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
+                      <span>6</span><span>7</span><span>8</span><span style="background:#d1d5db;border-radius:4px;color:#111">9</span><span>10</span><span>11</span><span>12</span>
+                      <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span>
+                    </div>
+                  </div>
+                  <p class="m-tip" style="font-size:12px;color:#9ca3af">灰色日期不可选 · 左右滑动切换月份</p>
+                </div>
+              </div>
+              <ul>
+                <li>日期格子约 30px 且无热区扩大,难点中</li>
+                <li>可用日期靠颜色区分(违反「不靠颜色」)</li>
+                <li>「滑动切月」是隐性手势,无替代按钮</li>
+                <li>老人对「周历」不敏感,认知负担高</li>
+              </ul>
+            </div>
+          </div>
+          <div class="panel panel-good">
+            <div class="panel-head">正解</div>
+            <div class="panel-body">
+              <div class="m-head">选择就诊日期</div>
+              <div class="m-body">
+                <div class="m-card" style="text-align:center;padding:14px">
+                  <p style="margin:0;font-weight:700">‹ 上周</p>
+                  <p style="margin:8px 0;font-size:1.4rem;font-weight:800">周四 9 月 24 日</p>
+                  <p style="margin:0;font-weight:700">下周 ›</p>
+                </div>
+                <div class="m-card">
+                  <span class="m-label">也可以直接</span>
+                  <span class="m-value">语音说「下周一」/ 输入 0924</span>
+                </div>
+                <div class="m-btn-primary" aria-hidden="true" style="border-radius:10px;text-align:center">确定</div>
+              </div>
+              <ul>
+                <li>「按周翻页」:符合挂号思维(约最近的号),日期大一档</li>
+                <li>翻页用大按钮,不依赖滑动</li>
+                <li>可选日期直接亮出,不用颜色玩猜谜</li>
+                <li>提供输入与语音替代路径</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="callout callout-tip">
+          <span class="callout-title">三问拆解</span>
+          <p><strong>谁被排除?</strong>手抖者(30px 格子)、色弱者(颜色即信息)、不识周历者。<strong>违反哪条?</strong>易操作(目标尺寸)、可感知(颜色冗余)。<strong>最小改法?</strong>不求重做组件——把点击区扩大到整行、给月份切换加上一对「‹ ›」按钮,改造成本一个下午。</p>
+        </div>
+      </section>
+
+      <section id="c5">
+        <h2><span class="h2-num">案例五.</span>起夜动线改造:三百元的空间适老化</h2>
+        <div class="prose">
+          <p>这是一类极常见的家庭改造(细节已匿名化):68 岁独居的王阿姨,半年内起夜时滑倒两次,第二次腕部骨折。问题不出在「不小心」,而出在动线本身:</p>
+          <ul>
+            <li><strong>诊断:</strong>床到卫生间 6 米,全程无灯;卫生间门槛高 35mm;马桶旁无扶手;地面亮面瓷砖。</li>
+            <li><strong>改造清单(合计约三百元):</strong>感应地脚灯 ×4(照亮全程,人动灯亮)· 床边扶手 ×1 · 马桶 L 型扶手 ×1 · 门槛坡化条 ×1 · 卫生间防滑垫 ×2。</li>
+            <li><strong>结果:</strong>改造后一年零跌倒。王阿姨的原话是:「以前半夜起来心里发怵,现在脚一动,路就亮了。」</li>
+          </ul>
+          <div class="callout callout-tip">
+            <span class="callout-title">三问拆解</span>
+            <p><strong>谁被伤害?</strong>夜里独自起床的每一个人——空间风险从不挑人。<strong>违反哪条?</strong>对应第四章:照度(暗适应)、高差、扶持、防滑四大件。<strong>最小改法?</strong>先做「照明 + 扶手 + 防滑」三件套,几乎零施工量;<strong>改造顺序永远先动线后美观</strong>。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="c6">
+        <h2><span class="h2-num">案例六.</span>真实产品:关怀模式好在哪</h2>
+        <div class="fact">
+          <h3><span class="fact-tag">产品</span>微信「关怀模式」</h3>
+          <div class="fb fb-fact">
+            <span class="fb-label">做法</span>
+            <p>设置中一键开启:文字与按钮整体放大、色彩对比增强、<strong>新增「听文字内容」——长按聊天文字即可朗读</strong>。</p>
+          </div>
+          <div class="fb fb-why">
+            <span class="fb-label">拆解:为什么它是标杆</span>
+            <p>① <strong>不改变结构与交互</strong>——页面布局、操作路径与普通版一致,老人从「大字版」切回普通版不需要重新学习(对比很多产品「长辈版=另一个 App」的做法);② <strong>「听文字」一举三得</strong>:服务老花、服务不识字人群、服务免提场景;③ 入口藏在设置里而非弹窗强推,<strong>不贴标签</strong>。</p>
+          </div>
+          <div class="fb fb-how">
+            <span class="fb-label">可借鉴的三条</span>
+            <p>适老增强优先做成「同一产品的一个开关」;朗读能力优先于改版式(成本低、收益大);给增强功能一个体面的、不带「老」字的入口。</p>
+          </div>
+        </div>
+        <div class="fact">
+          <h3><span class="fact-tag">产品</span>系统级适老:iOS / Android 辅助功能</h3>
+          <div class="fb fb-fact">
+            <span class="fb-label">做法</span>
+            <p>系统层提供<strong>动态字体</strong>(App 跟随系统字号放大)、<strong>旁白 / TalkBack 读屏</strong>、<strong>放大器</strong>、<strong>减弱动态效果</strong>、<strong>助听设备直连</strong>等。</p>
+          </div>
+          <div class="fb fb-why">
+            <span class="fb-label">拆解</span>
+            <p>系统把「无障碍」做成<strong>人人可调的偏好</strong>而不是「残障专用模式」,这正是通用设计的落地。对开发者的含义:你的 App 必须<strong>跟随系统设置</strong>(动态字体、读屏标签、减弱动效),否则系统再好,你的页面仍然把老人挡在门外。</p>
+          </div>
+        </div>
+        <div class="callout callout-warn">
+          <span class="callout-title">本章小结:拆案例的固定问法</span>
+          <p>遇到任何争议界面/空间,依次问:<strong>① 谁被排除了?(戴上老花镜、握力减半、工作记忆减半再走一遍)② 违反了五原则中的哪一条?(可感知/易操作/易理解/容错/尊重)③ 最小改法是什么?(永远先找不必重做的改法)</strong>。三问有答案,评审就有结论。</p>
+        </div>
+      </section>
+
+      <nav class="pager" aria-label="章节翻页">
+        <a class="prev" href="standards.html"><span class="pager-dir">上一章</span><span class="pager-title">⑤ 标准与规范</span></a>
+        <a class="next" href="process.html"><span class="pager-dir">下一章</span><span class="pager-title">⑦ 流程与自查</span></a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>适老化设计手册</strong> — 用设计敬老,让产品与环境对每个人友好。</p>
+    <p class="foot-note">本站全部页面即适老化示范:支持字号调节、高对比模式、键盘完整操作;内容参数为设计参考,落地请以现行国家规范与实测为准。</p>
+  </div>
+</footer>
+</body>
+</html>

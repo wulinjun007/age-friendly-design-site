@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-font="base" data-contrast="normal">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>③ 数字产品适老化 · 适老化设计手册</title>
+<meta name="description" content="App 与网页适老化设计:排版、色彩对比、触控手势、导航信息架构、表单输入、反馈容错、语音多通道,附对比度演示器与触控热区演示。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230a5c42'/%3E%3Ctext x='50' y='70' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3E适%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header class="site-header">
+  <div class="topbar wrap">
+    <p class="brand"><a href="index.html">适老化设计手册<span class="brand-en">Age-Friendly Design</span></a></p>
+    <div class="controls" role="group" aria-label="阅读设置(这也是本站的适老化示范)">
+      <span class="controls-label">字号</span>
+      <button type="button" class="ctrl-btn font-btn" data-font="base" aria-pressed="true">标准</button>
+      <button type="button" class="ctrl-btn font-btn" data-font="large" aria-pressed="false">大</button>
+      <button type="button" class="ctrl-btn font-btn" data-font="xlarge" aria-pressed="false">特大</button>
+      <button type="button" class="ctrl-btn" id="contrastBtn" aria-pressed="false">高对比模式</button>
+    </div>
+  </div>
+  <nav class="site-nav wrap" aria-label="章节导航">
+    <a href="index.html">总览</a>
+    <a href="aging.html">① 认识用户</a>
+    <a href="principles.html">② 设计原则</a>
+    <a href="digital.html" aria-current="page">③ 数字产品</a>
+    <a href="space.html">④ 空间环境</a>
+    <a href="standards.html">⑤ 标准规范</a>
+    <a href="cases.html">⑥ 案例拆解</a>
+    <a href="process.html">⑦ 流程自查</a>
+  </nav>
+</header>
+<p id="liveStatus" class="visually-hidden" aria-live="polite"></p>
+
+<main id="main">
+  <div class="wrap">
+    <div class="page-head">
+      <span class="kicker">第三章 · 数字产品</span>
+      <h1>数字产品适老化:从像素到流程的完整做法</h1>
+      <p class="lede">App 与网页的适老化不是「出一个大字版」,而是排版、色彩、触控、导航、表单、反馈七个层面各自达标后的总和。本章每节给出知识点、参数与做法,并附两个可以动手玩的演示。</p>
+    </div>
+
+    <article>
+      <div class="toc">
+        <p class="toc-title">本章导读</p>
+        <ol>
+          <li><a href="#type">排版与字号</a></li>
+          <li><a href="#color">色彩与对比</a></li>
+          <li><a href="#touch">触控与手势</a></li>
+          <li><a href="#nav">导航与信息架构</a></li>
+          <li><a href="#form">表单与输入</a></li>
+          <li><a href="#feedback">反馈与容错</a></li>
+          <li><a href="#voice">语音与多通道</a></li>
+          <li><a href="#demo-contrast">互动演示:对比度对阅读的影响</a></li>
+          <li><a href="#demo-touch">互动演示:点击热区与容错</a></li>
+          <li><a href="#checklist">长辈模式改造自查清单</a></li>
+        </ol>
+      </div>
+
+      <section id="type">
+        <h2><span class="h2-num">1.</span>排版与字号</h2>
+        <div class="fact">
+          <h3><span class="fact-tag">知识点</span>字号只是起点,可读性是系统工程</h3>
+          <div class="fb fb-fact">
+            <span class="fb-label">知识点</span>
+            <p>适老界面的正文一般 ≥ 18px(移动端不低于系统默认字号且支持放大),辅助说明也不应低于 14px;关键操作文字加粗;行距 1.5~1.8;中文每行 25~35 字;标题、正文、说明至少拉开两档字阶。</p>
+          </div>
+          <div class="fb fb-why">
+            <span class="fb-label">背后的道理</span>
+            <p>老花使近点后移,字号小时老人会本能地把手机拿远——拿远的极限就是放弃。行距与行长决定「串行率」:中文方块字密度高,行距不足时上下行互相粘连。</p>
+          </div>
+          <div class="fb fb-how">
+            <span class="fb-label">落地细节</span>
+            <p>全部尺寸用 <code>rem</code> 等相对单位,让「系统字体放大」不破版;字重 ≥ 400,避免细体;避免斜体与大段两端对齐;按钮文字与页面文字同源缩放,防止「字大了按钮装不下」。</p>
+          </div>
+          <div class="fb fb-pit">
+            <span class="fb-label">常见误区</span>
+            <p>把法律条款、活动规则做成 12px 浅灰小字。这些「想让用户别看的地方」恰恰是纠纷与投诉的来源,适老化审查会直接命中。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="color">
+        <h2><span class="h2-num">2.</span>色彩与对比</h2>
+        <div class="fact">
+          <h3><span class="fact-tag">知识点</span>对比度是唯一硬通货,颜色语义必须冗余</h3>
+          <div class="fb fb-fact">
+            <span class="fb-label">知识点</span>
+            <p>正文对比度 ≥ 4.5:1(AA),争取 ≥ 7:1(AAA);输入框、开关、图标等控件的边界对比 ≥ 3:1;<strong>红色错误、绿色成功等语义必须叠加文字或图标</strong>,不能只靠颜色。</p>
+          </div>
+          <div class="fb fb-why">
+            <span class="fb-label">背后的道理</span>
+            <p>晶状体黄化让蓝紫通道衰减弱(见 <a href="aging.html">① 认识用户</a>),色盲与白内障进一步压缩色彩信息;对比度(明度差)是最后失效的通道,所以一切关键信息最后都靠它兜底。</p>
+          </div>
+          <div class="fb fb-how">
+            <span class="fb-label">落地细节</span>
+            <p>默认<strong>浅底深字</strong>;深底浅字仅作可选模式;禁用浅灰水印文字、低对比描边按钮;焦点状态用「3px 实线描边 + 位移」表达,不依赖颜色变化;设计稿交付前用对比度工具全检(本章第 8 节有演示)。</p>
+          </div>
+          <div class="fb fb-pit">
+            <span class="fb-label">常见误区</span>
+            <p>「高级灰」设计体系直接移植到老年产品。灰阶体系内的色差对老人几乎不可见,层次感要以明度台阶重建。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="touch">
+        <h2><span class="h2-num">3.</span>触控与手势</h2>
+        <div class="fact">
+          <h3><span class="fact-tag">知识点</span>44×44px 是热区底线,视觉可以更小</h3>
+          <div class="fb fb-fact">
+            <span class="fb-label">知识点</span>
+            <p>点击热区(实际响应区域)不小于 44×44px,相邻目标间距 ≥ 8px;视觉图标可以小于 44px,但必须由不可见的扩大热区补足。双击、长按、双指捏合、边缘侧滑等手势,都必须提供单击按钮的替代路径。</p>
+          </div>
+          <div class="fb fb-why">
+            <span class="fb-label">背后的道理</span>
+            <p>44px 约为成年人食指指腹的触控面积;老年人手部震颤让落点在目标周围晃动,小目标 + 密集排列 = 高误触率。而「看不见的手势」(侧滑返回、长按删除)依赖隐性知识,老人不会主动发现,误触后更不知道如何撤销。</p>
+          </div>
+          <div class="fb fb-how">
+            <span class="fb-label">落地细节</span>
+            <p>列表项整体可点,而不是只有右侧小箭头可点;返回用<strong>左上角显式「返回」按钮</strong>,侧滑只作为补充;删除类操作放在与「完成」相反的角落并用文字确认;按下时给<strong>即时视觉反馈</strong>(加深、按压态),让老人确认「点到了」。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="nav">
+        <h2><span class="h2-num">4.</span>导航与信息架构</h2>
+        <div class="fact">
+          <h3><span class="fact-tag">知识点</span>层级即流失:三层是老人的舒适上限</h3>
+          <div class="fb fb-fact">
+            <span class="fb-label">知识点</span>
+            <p>核心功能 3 层以内到达;当前位置始终可见(标题、高亮标签);每个页面都有显式返回;导航用「任务词汇」命名(「交水电费」而不是「生活 +」);搜索框大、置顶、支持语音。</p>
+          </div>
+          <div class="fb fb-why">
+            <span class="fb-label">背后的道理</span>
+            <p>每深入一层,就要多记住一层「我为什么来这里」——这正是工作记忆最弱的部分。「迷宫 + 隐形返回」是老年用户流失率最高的组合。</p>
+          </div>
+          <div class="fb fb-how">
+            <span class="fb-label">落地细节</span>
+            <p>首页固定 4~5 个大入口,不常改版(老人靠位置记忆使用产品,改版等于抹掉他们的地图);<strong>禁用汉堡菜单作为唯一导航</strong>;面包屑可回跳;图标一律配文字标签。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="form">
+        <h2><span class="h2-num">5.</span>表单与输入</h2>
+        <div class="fact">
+          <h3><span class="fact-tag">知识点</span>标签常显、一次一步、错误可修复</h3>
+          <div class="fb fb-fact">
+            <span class="fb-label">知识点</span>
+            <p>输入框标签常显在框外(占位符不能当标签);长表单拆成分步填写,每步 3~5 项以内;数字字段自动弹数字键盘;错误提示就地出现,说明<strong>哪里错、为什么、怎么改</strong>;已填内容保留,返回不丢。</p>
+          </div>
+          <div class="fb fb-how">
+            <span class="fb-label">落地细节</span>
+            <p>能用选择就不让打字(身份证读卡/拍摄识别、常用地址点选);输入框高度 ≥ 48px;验证码改为短信或行为验证,若必须图形码则提供<strong>语音播报与一键刷新</strong>;提交按钮写明动作后果(「提交并缴费 128 元」)。</p>
+          </div>
+          <div class="fb fb-pit">
+            <span class="fb-label">常见误区</span>
+            <p>用行内小字校验(输入时实时标红)。老人往往注意不到行内变化,提交失败也不知道原因。关键校验要在<strong>提交时汇总播报/高亮</strong>,必要时语音读出。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="feedback">
+        <h2><span class="h2-num">6.</span>反馈与容错</h2>
+        <div class="fact">
+          <h3><span class="fact-tag">知识点</span>每个动作都要「有回音」,每次失败都要「有出路」</h3>
+          <div class="fb fb-fact">
+            <span class="fb-label">知识点</span>
+            <p>点击后即时出现按压态;处理中用文字说明状态(「正在提交,约需 5 秒」)而不是干转圈;成功给<strong>结果页</strong>而非 toast 一闪而过;失败给<strong>可执行的下一步</strong>(「重试」「联系客服」);无倒计时,或超时可一键延长。</p>
+          </div>
+          <div class="fb fb-why">
+            <span class="fb-label">背后的道理</span>
+            <p>「没有回音」会被老人理解为「没点上」,于是反复点击造成重复提交/重复扣款;「一闪而过的 toast」对处理速度变慢的用户等于没说。</p>
+          </div>
+          <div class="fb fb-how">
+            <span class="fb-label">落地细节</span>
+            <p>支付类操作支持<strong>事后撤销或客服介入</strong>;危险按钮与常用按钮拉开距离;弹窗按钮写清后果且主次分明;提供「操作历史」让老人自查「刚才那笔钱去哪了」。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="voice">
+        <h2><span class="h2-num">7.</span>语音与多通道</h2>
+        <div class="fact">
+          <h3><span class="fact-tag">知识点</span>打字是门槛,语音是拐杖,冗余是底线</h3>
+          <div class="fb fb-fact">
+            <span class="fb-label">知识点</span>
+            <p>三条互补路径:①<strong>文字转语音</strong>(长按读出屏幕内容,微信关怀模式的做法),服务视力衰退者;②<strong>语音转文字</strong>(语音输入替代拼音打字,解决不会拼音、打字慢);③<strong>读屏兼容</strong>(语义化标签、可读的控件名,让系统级读屏工具可用)。</p>
+          </div>
+          <div class="fb fb-how">
+            <span class="fb-label">落地细节</span>
+            <p>语音播报语速放慢、提供重复播放;文字记录与语音内容一致;重要通知「推送 + 短信 + 电话」分级冗余(金融、医疗场景);语音永远与视觉路径并存——<strong>语音是拐杖不是唯一通道</strong>,听力障碍与嘈杂环境同样存在。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="demo-contrast">
+        <h2><span class="h2-num">8.</span>互动演示:对比度对阅读的影响</h2>
+        <div class="prose">
+          <p>拖动滑杆改变文字深浅,切换背景色,右侧实时显示 WCAG 对比度与达标情况。你会发现:在中灰底上,连「看着还行」的颜色都常常不达标——这就是为什么对比度要用公式算,不能用眼睛估。</p>
+        </div>
+        <div class="demo">
+          <h3><span class="demo-tag">互动演示</span>对比度演示器</h3>
+          <div class="cd-controls">
+            <label for="cdFg"><strong>文字深浅</strong>(左深右浅):</label>
+            <input type="range" id="cdFg" min="0" max="100" value="55" class="big-range">
+            <label for="cdBg"><strong>背景色</strong>:</label>
+            <select id="cdBg" class="big-select">
+              <option value="#ffffff" selected>白底 #ffffff</option>
+              <option value="#faf7f1">纸色底 #faf7f1</option>
+              <option value="#8a8a8a">中灰底 #8a8a8a</option>
+              <option value="#1f2937">深色底 #1f2937</option>
+            </select>
+            <p class="cd-ratio">当前文字/背景对比度:<strong id="cdRatio">计算中…</strong></p>
+            <p id="cdBadge" aria-live="polite"></p>
+          </div>
+          <div class="cd-stage" id="cdStage" style="background:#ffffff">
+            <p class="cd-body" id="cdBody">王阿姨,您本月的水费账单已出:68.50 元。</p>
+            <p class="cd-small" id="cdSmall">小号说明文字(14px):逾期将按日加收违约金。</p>
+            <span class="cd-btn" id="cdBtn" aria-hidden="true">立即缴费</span>
+          </div>
+          <p class="demo-hint">判定标准(正文 18px):≥4.5:1 为 AA 达标,≥7:1 为 AAA;14px 小字同样按 4.5:1 判定。按钮底色与白字同样受对比度约束——深浅不合适时「立即缴费」会先看不清。</p>
+        </div>
+      </section>
+
+      <section id="demo-touch">
+        <h2><span class="h2-num">9.</span>互动演示:点击热区与容错</h2>
+        <div class="prose">
+          <p>三行按钮的<strong>视觉尺寸</strong>不同,试试点按并开启「显示热区」:第一个按钮视觉和热区都只有 28px(反例);第二个 44px(底线);第三个视觉 28px 图标但热区 48px(正确做法:小图标 + 大热区)。</p>
+        </div>
+        <div class="demo">
+          <h3><span class="demo-tag">互动演示</span>点击热区演示</h3>
+          <p><button type="button" class="ctrl-btn" id="ttZoneToggle" aria-pressed="false">显示点击热区</button></p>
+          <div class="tt-stage" id="ttStage">
+            <div class="tt-row">
+              <span class="tt-chip">反例:28px 小按钮,震颤的手很难点中,还容易误触相邻目标</span>
+              <button type="button" class="m-icon-btn tt-bad" data-name="28px 关闭按钮" aria-label="28px 关闭按钮(演示)">✕</button>
+            </div>
+            <div class="tt-row">
+              <span class="tt-chip">底线:44×44px,成年人食指指腹大小,能点中但不算从容</span>
+              <button type="button" class="m-icon-btn tt-mid" data-name="44px 关闭按钮" aria-label="44px 关闭按钮(演示)">✕</button>
+            </div>
+            <div class="tt-row">
+              <span class="tt-chip">正解:视觉图标 28px + 热区 48×48px,「看着精致,点着舒服」</span>
+              <button type="button" class="m-icon-btn tt-good" data-name="48px 热区关闭按钮" aria-label="48px 热区关闭按钮(演示)">✕</button>
+            </div>
+          </div>
+          <p class="tt-feedback" id="ttFeedback" aria-live="polite">试试点击右侧的按钮,这里会告诉你点中了哪一个。</p>
+        </div>
+      </section>
+
+      <section id="checklist">
+        <h2><span class="h2-num">10.</span>长辈模式改造自查清单</h2>
+        <p class="prose">把存量 App / 网页改造成长辈模式时的 10 条核心检查项,逐条打勾:</p>
+        <ul class="checklist">
+          <li><input type="checkbox" id="ck1"><label for="ck1"><strong>字号:</strong>正文 ≥ 18px 或支持系统级放大且不破版,禁用 12px 灰色小字</label></li>
+          <li><input type="checkbox" id="ck2"><label for="ck2"><strong>对比度:</strong>全站正文 ≥ 4.5:1,控件边界 ≥ 3:1,已用工具逐页检测</label></li>
+          <li><input type="checkbox" id="ck3"><label for="ck3"><strong>触控:</strong>所有可点元素热区 ≥ 44×44px,相邻间距 ≥ 8px</label></li>
+          <li><input type="checkbox" id="ck4"><label for="ck4"><strong>验证码:</strong>无扭曲图形码,或已提供短信 / 行为 / 语音替代</label></li>
+          <li><input type="checkbox" id="ck5"><label for="ck5"><strong>广告与诱导:</strong>无悬浮广告、无诱导下载、无「摇一摇」跳转,关闭按钮不伪装</label></li>
+          <li><input type="checkbox" id="ck6"><label for="ck6"><strong>导航:</strong>核心功能 ≤ 3 层,显式返回按钮,首页固定不改版</label></li>
+          <li><input type="checkbox" id="ck7"><label for="ck7"><strong>超时:</strong>无倒计时;必须限时处(如支付)可一键延长</label></li>
+          <li><input type="checkbox" id="ck8"><label for="ck8"><strong>反馈:</strong>每个操作有文字结果,失败给下一步,支持撤销或客服兜底</label></li>
+          <li><input type="checkbox" id="ck9"><label for="ck9"><strong>语音:</strong>支持文字朗读 / 语音输入至少一项,读屏工具可完整走通主流程</label></li>
+          <li><input type="checkbox" id="ck10"><label for="ck10"><strong>人工兜底:</strong>每一屏都能在 2 次点击内找到「人工客服 / 帮我操作」</label></li>
+        </ul>
+        <div class="callout callout-tip">
+          <span class="callout-title">本章小结</span>
+          <p>数字适老化的骨架是:<strong>看得清(排版/色彩)→ 点得中(触控)→ 找得到(导航)→ 填得完(表单)→ 有回音(反馈)→ 说得出(语音)</strong>。任何一环断裂,前面的努力都会归零。参数依据见 <a href="standards.html">⑤ 标准规范</a>,反模式对照见 <a href="cases.html">⑥ 案例拆解</a>。</p>
+        </div>
+      </section>
+
+      <nav class="pager" aria-label="章节翻页">
+        <a class="prev" href="principles.html"><span class="pager-dir">上一章</span><span class="pager-title">② 设计原则与核心指标</span></a>
+        <a class="next" href="space.html"><span class="pager-dir">下一章</span><span class="pager-title">④ 空间环境适老化</span></a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>适老化设计手册</strong> — 用设计敬老,让产品与环境对每个人友好。</p>
+    <p class="foot-note">本站全部页面即适老化示范:支持字号调节、高对比模式、键盘完整操作;内容参数为设计参考,落地请以现行国家规范与实测为准。</p>
+  </div>
+</footer>
+</body>
+</html>

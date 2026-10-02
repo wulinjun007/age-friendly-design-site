@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-font="base" data-contrast="normal">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>② 设计原则与核心指标 · 适老化设计手册</title>
+<meta name="description" content="通用设计七原则、五大适老化原则,以及字号、对比度、触控目标、超时策略等核心量化指标速查表。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230a5c42'/%3E%3Ctext x='50' y='70' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3E适%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header class="site-header">
+  <div class="topbar wrap">
+    <p class="brand"><a href="index.html">适老化设计手册<span class="brand-en">Age-Friendly Design</span></a></p>
+    <div class="controls" role="group" aria-label="阅读设置(这也是本站的适老化示范)">
+      <span class="controls-label">字号</span>
+      <button type="button" class="ctrl-btn font-btn" data-font="base" aria-pressed="true">标准</button>
+      <button type="button" class="ctrl-btn font-btn" data-font="large" aria-pressed="false">大</button>
+      <button type="button" class="ctrl-btn font-btn" data-font="xlarge" aria-pressed="false">特大</button>
+      <button type="button" class="ctrl-btn" id="contrastBtn" aria-pressed="false">高对比模式</button>
+    </div>
+  </div>
+  <nav class="site-nav wrap" aria-label="章节导航">
+    <a href="index.html">总览</a>
+    <a href="aging.html">① 认识用户</a>
+    <a href="principles.html" aria-current="page">② 设计原则</a>
+    <a href="digital.html">③ 数字产品</a>
+    <a href="space.html">④ 空间环境</a>
+    <a href="standards.html">⑤ 标准规范</a>
+    <a href="cases.html">⑥ 案例拆解</a>
+    <a href="process.html">⑦ 流程自查</a>
+  </nav>
+</header>
+<p id="liveStatus" class="visually-hidden" aria-live="polite"></p>
+
+<main id="main">
+  <div class="wrap">
+    <div class="page-head">
+      <span class="kicker">第二章 · 原则与指标</span>
+      <h1>设计原则与核心指标:把「体贴」变成可验收的数字</h1>
+      <p class="lede">原则负责方向,参数负责落地。本章先给出理论骨架(通用设计七原则),再收敛出五条适老原则,最后给一张可以直接贴在工位上的量化指标速查表。</p>
+    </div>
+
+    <article>
+      <div class="toc">
+        <p class="toc-title">本章导读</p>
+        <ol>
+          <li><a href="#universal">理论地基:通用设计七原则</a></li>
+          <li><a href="#five">适老化五原则:可感知 · 易操作 · 易理解 · 容错 · 尊重</a></li>
+          <li><a href="#metrics">核心量化指标速查表</a></li>
+          <li><a href="#misuse">三个最常见的整体性误区</a></li>
+        </ol>
+      </div>
+
+      <section id="universal">
+        <h2><span class="h2-num">1.</span>理论地基:通用设计七原则</h2>
+        <div class="prose">
+          <p>1997 年,美国北卡罗来纳州立大学 Ronald Mace 团队提出<strong>通用设计(Universal Design)七原则</strong>——它不专门为老人而写,却是适老化设计最重要的理论源头:与其事后为特殊人群打补丁,不如一开始就为能力多样的人群设计。</p>
+        </div>
+        <div class="table-scroll">
+          <table class="spec">
+            <caption>通用设计七原则及其适老化对应</caption>
+            <thead>
+              <tr><th scope="col">原则</th><th scope="col">含义</th><th scope="col">适老化场景示例</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">公平使用</th><td>对不同能力的人同样可用,不羞辱、不区分对待</td><td>长辈模式与主流程功能一致,不是阉割版</td></tr>
+              <tr><th scope="row">灵活使用</th><td>容纳不同的使用方式与节奏偏好</td><td>同一操作支持点选、语音、物理按键多种输入</td></tr>
+              <tr><th scope="row">简单直观</th><td>不需要经验也能理解,复杂度与用户能力无关</td><td>「像发短信一样」发语音转账</td></tr>
+              <tr><th scope="row">信息可觉察</th><td>多通道有效传达,照顾感官差异</td><td>提示音 + 震动 + 文字三通道冗余</td></tr>
+              <tr><th scope="row">容错</th><td>危险操作隔离,误操作可逆</td><td>转账前二次确认,转错可申诉撤回</td></tr>
+              <tr><th scope="row">省力</th><td>姿势自然,重复与持续用力最小化</td><td>常用物品放在离地 600~1600mm 的「黄金区」</td></tr>
+              <tr><th scope="row">尺寸空间适当</th><td>体形、姿态、活动能力不同都能接近和使用</td><td>轮椅回转直径 ≥ 1500mm,门净宽 ≥ 800mm</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout callout-tip">
+          <span class="callout-title">设计思路</span>
+          <p>七原则的价值在于<strong>把「照顾弱者」重构为「让系统更健壮」</strong>。汇报和立项时用「通用设计」叙事,比「为老人特调」更容易获得资源——它服务于孕妇、伤患、戴老花镜的中年人,以及每一个未来会老的人。</p>
+        </div>
+      </section>
+
+      <section id="five">
+        <h2><span class="h2-num">2.</span>适老化五原则</h2>
+        <p class="prose">结合 WCAG 的 POUR 框架(可感知 Perceivable、可操作 Operable、可理解 Understandable、健壮 Robust)与老年用户特性,实用版收敛为五条:</p>
+
+        <div class="fact">
+          <h3><span class="fact-tag">原则一</span>可感知:信息要「够大、够深、够多通道」</h3>
+          <div class="fb fb-how">
+            <span class="fb-label">落地细节</span>
+            <p>字号 ≥ 18px、正文对比度 ≥ 4.5:1、图形与控件边界 ≥ 3:1;关键信息<strong>声 + 光 + 振动至少两通道</strong>;颜色永远不作为唯一信息载体。</p>
+          </div>
+          <div class="fb fb-why">
+            <span class="fb-label">背后的道理</span>
+            <p>对应第一章:进光量、对比敏感度、高频听力同步衰减,任何单通道传达都有漏检风险。</p>
+          </div>
+        </div>
+
+        <div class="fact">
+          <h3><span class="fact-tag">原则二</span>易操作:大目标、单指、少手势</h3>
+          <div class="fb fb-how">
+            <span class="fb-label">落地细节</span>
+            <p>点击目标 ≥ 44×44px、间距 ≥ 8px;双击/长按/多指手势全部提供单击替代;操作<strong>不需要精准悬停</strong>;物理世界的把手、旋钮按「能戴着老花镜、握力减半」来设计。</p>
+          </div>
+        </div>
+
+        <div class="fact">
+          <h3><span class="fact-tag">原则三</span>易理解:一次一事、术语一致、挂靠经验</h3>
+          <div class="fb fb-how">
+            <span class="fb-label">落地细节</span>
+            <p>一屏只承载一个主任务;同一动作全流程同名(「提交」就不要中途变成「确认」);图标必配文字;新功能用旧隐喻引入;句子短,主动语态,先结论后解释。</p>
+          </div>
+          <div class="fb fb-why">
+            <span class="fb-label">背后的道理</span>
+            <p>工作记忆容量缩小意味着「并发理解能力」下降;晶体智力保留意味着旧经验是最大的可用性资产。</p>
+          </div>
+        </div>
+
+        <div class="fact">
+          <h3><span class="fact-tag">原则四</span>容错:撤销优于确认,兜底优于提示</h3>
+          <div class="fb fb-how">
+            <span class="fb-label">落地细节</span>
+            <p>优先做「可撤销」而非「弹窗确认」;确需确认时,按钮写明后果(「确认支付 100 元」);无时间限制或超时可延长;错误提示<strong>就地说明原因与改法</strong>,不用纯红色惊叹号吓人;危险与常用操作物理隔离,防误触。</p>
+          </div>
+          <div class="fb fb-why">
+            <span class="fb-label">背后的道理</span>
+            <p>老人失败后自我归因于「我笨」并放弃,所以<strong>系统必须比用户更不怕失败</strong>。</p>
+          </div>
+        </div>
+
+        <div class="fact">
+          <h3><span class="fact-tag">原则五</span>尊重:不幼稚化,不贴标签</h3>
+          <div class="fb fb-how">
+            <span class="fb-label">落地细节</span>
+            <p>文案平视(「暂时不用」而非「残忍拒绝」);视觉上适老样式要「正常、体面」,不做大红大金的「敬老皮肤」;默认体验就该友好,长辈模式只是增强;隐私上给老人与年轻人同等强度的保护(反诈骗提示、免诱导授权)。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="metrics">
+        <h2><span class="h2-num">3.</span>核心量化指标速查表</h2>
+        <p class="prose">这是全站引用频率最高的一张表,建议打印(⑦ 流程自查里有配套走查清单)。</p>
+        <div class="table-scroll">
+          <table class="spec">
+            <caption>数字产品适老化核心参数(综合 WCAG 与主流实践)</caption>
+            <thead>
+              <tr><th scope="col">指标</th><th scope="col">底线值</th><th scope="col">建议值</th><th scope="col">依据与说明</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">正文字号</th><td>≥ 16px(系统默认)</td><td>18~20px</td><td>工信部要求 App 适老版支持字体放大且不乱版;老年版正文 18px 起步</td></tr>
+              <tr><th scope="row">文字对比度</th><td>≥ 4.5:1(WCAG AA)</td><td>≥ 7:1(AAA)</td><td>大字(≥24px)可放宽至 3:1,但老年产品建议不放宽</td></tr>
+              <tr><th scope="row">图形/控件边界对比</th><td>≥ 3:1</td><td>≥ 4.5:1</td><td>WCAG 1.4.11:输入框、开关、图标必须有可辨边界</td></tr>
+              <tr><th scope="row">点击目标</th><td>44×44px(含热区)</td><td>48×48px 以上</td><td>视觉可小于热区,但<strong>热区</strong>不得小于 44px,间距 ≥ 8px</td></tr>
+              <tr><th scope="row">行距 / 行长</th><td>1.5 倍行距</td><td>1.7~1.8;每行 25~35 字</td><td>中文行长过长易串行,过短碎片化</td></tr>
+              <tr><th scope="row">操作反馈</th><td>即时可见(按下有状态变化)</td><td>完成后文字确认</td><td>不能只靠动画/颜色,要有文字结果</td></tr>
+              <tr><th scope="row">会话超时</th><td>超时可延长或无超时</td><td>不设倒计时</td><td>WCAG 2.2.1:时间限制必须可调整、可延期</td></tr>
+              <tr><th scope="row">层级深度</th><td>≤ 3 层到达核心功能</td><td>首页直达高频功能</td><td>每层都有记忆成本,层级即流失</td></tr>
+              <tr><th scope="row">验证码</th><td>提供图形码以外的替代</td><td>短信 / 行为验证 / 语音</td><td>扭曲图形码对视力衰退者是双重障碍</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout callout-data">
+          <span class="callout-title">为什么是这些数字</span>
+          <p><strong>4.5:1</strong> 来自对低视力人群阅读阈值的实测; <strong>44px</strong> 约等于成年人食指指腹的平均触控面积(2.5mm 图标在典型屏密度下的换算); <strong>3 层</strong>对应工作记忆容量衰减后的安全上限。数字不是拍的,每一条都能往下追问一层。</p>
+        </div>
+      </section>
+
+      <section id="misuse">
+        <h2><span class="h2-num">4.</span>三个最常见的整体性误区</h2>
+        <div class="fact">
+          <h3><span class="fact-tag">误区一</span>「字大 = 适老化」</h3>
+          <p>放大字号只是五分之一。只放大字号不放大间距、不提升对比度、不简化流程,得到的是「放大的垃圾」——字看清了,仍然点不中、读不懂、回不去。</p>
+        </div>
+        <div class="fact">
+          <h3><span class="fact-tag">误区二</span>「单独做一个老年版」</h3>
+          <p>分离版意味着双倍维护、功能滞后、且把老人标记为「二等用户」。正确路径:<strong>主流程默认友好(比如默认 18px、常显标签、无超时),长辈模式只做增强(更大字、语音辅助、简化首页)。</strong></p>
+        </div>
+        <div class="fact">
+          <h3><span class="fact-tag">误区三</span>「适老化是一次性项目」</h3>
+          <p>适老化的归宿不是「上线一个大字版」,而是<strong>组件库与设计规范的默认值</strong>:按钮默认高度、文字默认色值、弹窗默认按钮文案……当新人随手用的组件就是适老的,适老化才真正可持续(见 <a href="process.html">⑦ 流程自查</a>)。</p>
+        </div>
+      </section>
+
+      <nav class="pager" aria-label="章节翻页">
+        <a class="prev" href="aging.html"><span class="pager-dir">上一章</span><span class="pager-title">① 认识老年用户</span></a>
+        <a class="next" href="digital.html"><span class="pager-dir">下一章</span><span class="pager-title">③ 数字产品适老化</span></a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>适老化设计手册</strong> — 用设计敬老,让产品与环境对每个人友好。</p>
+    <p class="foot-note">本站全部页面即适老化示范:支持字号调节、高对比模式、键盘完整操作;内容参数为设计参考,落地请以现行国家规范与实测为准。</p>
+  </div>
+</footer>
+</body>
+</html>

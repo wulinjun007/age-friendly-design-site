@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-font="base" data-contrast="normal">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>适老化设计手册 · 总览</title>
+<meta name="description" content="适老化设计知识库:认识老年用户、设计原则与量化指标、数字产品与空间环境的适老化做法、标准规范与案例拆解。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230a5c42'/%3E%3Ctext x='50' y='70' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3E适%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header class="site-header">
+  <div class="topbar wrap">
+    <p class="brand"><a href="index.html">适老化设计手册<span class="brand-en">Age-Friendly Design</span></a></p>
+    <div class="controls" role="group" aria-label="阅读设置(这也是本站的适老化示范)">
+      <span class="controls-label">字号</span>
+      <button type="button" class="ctrl-btn font-btn" data-font="base" aria-pressed="true">标准</button>
+      <button type="button" class="ctrl-btn font-btn" data-font="large" aria-pressed="false">大</button>
+      <button type="button" class="ctrl-btn font-btn" data-font="xlarge" aria-pressed="false">特大</button>
+      <button type="button" class="ctrl-btn" id="contrastBtn" aria-pressed="false">高对比模式</button>
+    </div>
+  </div>
+  <nav class="site-nav wrap" aria-label="章节导航">
+    <a href="index.html" aria-current="page">总览</a>
+    <a href="aging.html">① 认识用户</a>
+    <a href="principles.html">② 设计原则</a>
+    <a href="digital.html">③ 数字产品</a>
+    <a href="space.html">④ 空间环境</a>
+    <a href="standards.html">⑤ 标准规范</a>
+    <a href="cases.html">⑥ 案例拆解</a>
+    <a href="process.html">⑦ 流程自查</a>
+  </nav>
+</header>
+<p id="liveStatus" class="visually-hidden" aria-live="polite"></p>
+
+<main id="main">
+  <div class="wrap">
+
+    <section class="hero">
+      <span class="kicker">知识库 · 2026 年 9 月版</span>
+      <h1>适老化设计手册:把「为老人设计」做成「让所有人更好用」</h1>
+      <p class="lede">这是一份面向设计师、产品经理、前端工程师与空间改造者的知识库:从老年人的生理与认知变化出发,讲清每一条适老化设计规则的<strong>知识点、背后的道理、落地参数与常见误区</strong>,覆盖数字产品与空间环境两大场景。</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <p class="stat-num">3.1 亿 · 22%</p>
+          <p class="stat-label">2024 年末我国 60 岁及以上人口数量与占比(国家统计局)</p>
+        </div>
+        <div class="stat">
+          <p class="stat-num">预计 4 亿</p>
+          <p class="stat-label">2035 年前后 60 岁以上人口规模,中国将进入重度老龄化阶段</p>
+        </div>
+        <div class="stat">
+          <p class="stat-num">115 + 43</p>
+          <p class="stat-label">2021 年工信部首批适老化改造的网站与 App 数量,适老化已从「倡议」变为「要求」</p>
+        </div>
+      </div>
+    </section>
+
+    <article>
+      <h2>什么是适老化设计</h2>
+      <div class="prose">
+        <p><strong>适老化设计(Age-friendly Design)</strong>是针对老年人视力、听力、运动能力、认知能力的变化,对产品、服务与环境进行的有针对性的调整,让老年人能够<strong>安全、独立、有尊严地</strong>完成他们想做的事。</p>
+        <p>它有两条常被忽视的边界:</p>
+        <ul>
+          <li><strong>向下是底线,不是风格。</strong>适老化不是「加大加粗变暖色」的视觉皮肤,而是可用性(Accessibility + Usability)工程:每一条规则背后都有一个可度量的参数和一个生理学原因。</li>
+          <li><strong>向上是全龄友好。</strong>好的适老化设计几乎总能让所有人受益,这就是经典的<strong>「坡道效应」(Curb-cut Effect)</strong>——为轮椅使用者设计的路边坡道,最终方便了推婴儿车的父母、拉行李箱的旅客和骑行者。</li>
+        </ul>
+        <div class="callout callout-tip">
+          <span class="callout-title">设计思路</span>
+          <p>不要把适老化理解成「给老年人单独做一版」。正确的顺序是:<strong>主流程先适老(默认值就友好)</strong>,再对重度需求用户提供「长辈模式 / 关怀模式」做增强。反过来做,等于把老人分流到二等入口。</p>
+        </div>
+      </div>
+
+      <h2>为什么是现在</h2>
+      <div class="prose">
+        <p>三股力量把适老化从「加分项」推成了「必答题」:</p>
+        <ol>
+          <li><strong>人口结构。</strong>60 岁及以上人口已达 3.1 亿(占 22%),且 50~59 岁的「准老年」人群规模更大——他们是刚学会用智能手机、正被各种验证码和弹窗劝退的一代。</li>
+          <li><strong>政策与标准。</strong>2020 年国办印发《关于切实解决老年人运用智能技术困难的实施方案》;2021 年工信部启动互联网应用适老化改造专项行动;2022 年强制性国标 GB 55019《建筑与市政工程无障碍通用规范》实施——建筑适老化已进入<strong>强制规范</strong>时代。</li>
+          <li><strong>商业现实。</strong>老年群体的支付、医疗、社交需求真实存在,但<strong>流失是静默的</strong>:打不开、看不清、点不中的用户不会提交反馈,只会直接离开。适老化本质上是把「看不见的流失」找回来。</li>
+        </ol>
+      </div>
+
+      <h2>贯穿全站的四条设计思路</h2>
+      <p class="prose">全站的知识点可以收敛为四个动词。遇到任何适老化问题,先用它们过一遍:</p>
+      <div class="kgrid">
+        <div class="kcard">
+          <h3>放大</h3>
+          <p><strong>让关键信息更容易被感知。</strong>老年人视网膜接收的光线约为年轻人的三分之一,所以字号、对比度、照度、提示音都要「放大」到他们的感知阈值之上——而不是在年轻人的阈值边缘反复试探。</p>
+          <p class="kcard-link">→ 详见 <a href="aging.html">① 认识用户</a></p>
+        </div>
+        <div class="kcard">
+          <h3>减法</h3>
+          <p><strong>降低每一步的操作与认知成本。</strong>层级砍到三层以内、一屏只留一个重点、手势全部给出单指替代方案、验证码换成系统更强的短信校验。减掉的是步骤,保住的是任务完成率。</p>
+          <p class="kcard-link">→ 详见 <a href="principles.html">② 设计原则</a></p>
+        </div>
+        <div class="kcard">
+          <h3>兜底</h3>
+          <p><strong>为每一次失败准备退路。</strong>误触可撤销、超时可延长、语音可替代打字、物理开关永远保留、紧急拉绳长到倒地也够得着。兜底思维来自一个前提:<strong>老人第一次失败后往往不会再试第二次。</strong></p>
+          <p class="kcard-link">→ 详见 <a href="digital.html">③ 数字产品</a> · <a href="space.html">④ 空间环境</a></p>
+        </div>
+        <div class="kcard">
+          <h3>尊重</h3>
+          <p><strong>不幼稚化、不贴标签。</strong>图标配文字而非纯图标,文案用「暂时不用」而非「残忍拒绝」,关怀模式的默认样式要「看起来正常」。老人要的是独立完成,不是被照顾的感觉。</p>
+          <p class="kcard-link">→ 详见 <a href="cases.html">⑥ 案例拆解</a></p>
+        </div>
+      </div>
+
+      <h2>本站目录</h2>
+      <div class="kgrid">
+        <div class="kcard">
+          <h3><span class="kcard-num">①</span>认识用户</h3>
+          <p>视觉、听觉、运动、认知四类能力如何随年龄变化,每组变化对应哪些设计含义。附<strong>老年视觉模拟器</strong>,先共情再设计。</p>
+          <p class="kcard-link"><a href="aging.html">进入本章 →</a></p>
+        </div>
+        <div class="kcard">
+          <h3><span class="kcard-num">②</span>设计原则</h3>
+          <p>通用设计七原则,以及可感知、易操作、易理解、容错、尊重五大适老原则,附核心量化指标速查表(字号、对比度、触控目标、超时策略)。</p>
+          <p class="kcard-link"><a href="principles.html">进入本章 →</a></p>
+        </div>
+        <div class="kcard">
+          <h3><span class="kcard-num">③</span>数字产品</h3>
+          <p>排版、色彩、触控、导航、表单、反馈、语音七大板块的做法与参数;附<strong>对比度演示器</strong>与<strong>触控热区演示</strong>。</p>
+          <p class="kcard-link"><a href="digital.html">进入本章 →</a></p>
+        </div>
+        <div class="kcard">
+          <h3><span class="kcard-num">④</span>空间环境</h3>
+          <p>从通行、卫生间、起夜动线到照明与智能家居的改造要点,附常用尺寸速查表与「花小钱办大事」的优先级思路。</p>
+          <p class="kcard-link"><a href="space.html">进入本章 →</a></p>
+        </div>
+        <div class="kcard">
+          <h3><span class="kcard-num">⑤</span>标准规范</h3>
+          <p>WCAG、GB 55019、JGJ 450、工信部 App 适老化规范等国内外标准的关键条目,以及如何用标准做设计验收。</p>
+          <p class="kcard-link"><a href="standards.html">进入本章 →</a></p>
+        </div>
+        <div class="kcard">
+          <h3><span class="kcard-num">⑥</span>案例拆解</h3>
+          <p>验证码、诱导弹窗、图标导航、日期选择等典型反模式的好坏对比与改法,以及起夜动线改造、微信关怀模式等真实案例的思路分析。</p>
+          <p class="kcard-link"><a href="cases.html">进入本章 →</a></p>
+        </div>
+        <div class="kcard">
+          <h3><span class="kcard-num">⑦</span>流程自查</h3>
+          <p>老年用户研究怎么做(招募、入户观察、访谈提问技巧)、可用性测试指标,以及一份可直接打印的 20 条设计走查清单。</p>
+          <p class="kcard-link"><a href="process.html">进入本章 →</a></p>
+        </div>
+      </div>
+
+      <h2>本站的使用方式</h2>
+      <div class="prose">
+        <p>本站自身即一个适老化示范,建议先体验再阅读:</p>
+        <ul>
+          <li><strong>右上角「字号」三档切换</strong>(标准 18px / 大 20px / 特大 23px),选择会被记住,下次访问仍然生效;</li>
+          <li><strong>「高对比模式」</strong>切换为纯黑白配色并加粗描边,适合强光环境下阅读;</li>
+          <li>全站<strong>没有汉堡菜单</strong>、没有悬停才能看到的内容、没有时间限制,所有按钮点击区域不小于 44×44px,可用 Tab 键完整操作;</li>
+          <li>每章开头有「本章导读」跳转目录,每条知识点按 <strong>知识点 → 背后的道理 → 落地细节 → 常见误区</strong> 四段展开。</li>
+        </ul>
+        <div class="callout callout-data">
+          <span class="callout-title">内容说明</span>
+          <p>站内参数(如对比度 4.5:1、触控 44px、回转直径 1500mm)均来自 WCAG、国家及行业标准与主流实践;具体工程落地时,请以<strong>现行有效版本</strong>的规范原文和实测为准。</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>适老化设计手册</strong> — 用设计敬老,让产品与环境对每个人友好。</p>
+    <p class="foot-note">本站全部页面即适老化示范:支持字号调节、高对比模式、键盘完整操作;内容参数为设计参考,落地请以现行国家规范与实测为准。</p>
+  </div>
+</footer>
+</body>
+</html>

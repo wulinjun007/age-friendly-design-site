@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-font="base" data-contrast="normal">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>① 认识老年用户 · 适老化设计手册</title>
+<meta name="description" content="视觉、听觉、运动、认知能力随年龄的变化规律,以及每组变化对应的设计含义。附老年视觉模拟器。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230a5c42'/%3E%3Ctext x='50' y='70' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3E适%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header class="site-header">
+  <div class="topbar wrap">
+    <p class="brand"><a href="index.html">适老化设计手册<span class="brand-en">Age-Friendly Design</span></a></p>
+    <div class="controls" role="group" aria-label="阅读设置(这也是本站的适老化示范)">
+      <span class="controls-label">字号</span>
+      <button type="button" class="ctrl-btn font-btn" data-font="base" aria-pressed="true">标准</button>
+      <button type="button" class="ctrl-btn font-btn" data-font="large" aria-pressed="false">大</button>
+      <button type="button" class="ctrl-btn font-btn" data-font="xlarge" aria-pressed="false">特大</button>
+      <button type="button" class="ctrl-btn" id="contrastBtn" aria-pressed="false">高对比模式</button>
+    </div>
+  </div>
+  <nav class="site-nav wrap" aria-label="章节导航">
+    <a href="index.html">总览</a>
+    <a href="aging.html" aria-current="page">① 认识用户</a>
+    <a href="principles.html">② 设计原则</a>
+    <a href="digital.html">③ 数字产品</a>
+    <a href="space.html">④ 空间环境</a>
+    <a href="standards.html">⑤ 标准规范</a>
+    <a href="cases.html">⑥ 案例拆解</a>
+    <a href="process.html">⑦ 流程自查</a>
+  </nav>
+</header>
+<p id="liveStatus" class="visually-hidden" aria-live="polite"></p>
+
+<main id="main">
+  <div class="wrap">
+    <div class="page-head">
+      <span class="kicker">第一章 · 用户研究</span>
+      <h1>认识老年用户:变化发生在哪里,设计就发生在哪里</h1>
+      <p class="lede">适老化设计的全部规则,几乎都能追溯到四类能力的变化:视觉、听觉、运动、认知。先理解变化本身,规则就不再是需要死记的条文,而是自然推论。</p>
+    </div>
+
+    <article>
+      <div class="toc">
+        <p class="toc-title">本章导读</p>
+        <ol>
+          <li><a href="#vision">视觉:最先被影响、最常被低估</a></li>
+          <li><a href="#hearing">听觉:高频先退,辅音先丢</a></li>
+          <li><a href="#motor">运动:手部精细动作与平衡</a></li>
+          <li><a href="#cognition">认知:慢下来的处理器,没丢下的经验</a></li>
+          <li><a href="#emotion">情感与自尊:最容易被设计伤害的部分</a></li>
+          <li><a href="#sim">互动演示:老年视觉模拟器</a></li>
+        </ol>
+      </div>
+
+      <section id="vision">
+        <h2><span class="h2-num">1.</span>视觉:最先被影响、最常被低估</h2>
+        <div class="prose">
+          <p>人眼从 40 岁左右开始明显老化,60 岁以后的变化对设计的影响是「断崖式」的。视觉是绝大多数界面与空间信息的第一入口,所以它排第一章。</p>
+        </div>
+
+        <div class="fact">
+          <h3><span class="fact-tag">知识点</span>进光量:老人需要约 3 倍的光</h3>
+          <div class="fb fb-fact">
+            <span class="fb-label">知识点</span>
+            <p>晶状体透光率随年龄持续下降,瞳孔变小,60 岁老人视网膜接收到的光线大约只有 20 岁年轻人的 1/3。想获得同样的「亮度感受」,环境照度需要提高到年轻人的 2~3 倍。</p>
+          </div>
+          <div class="fb fb-why">
+            <span class="fb-label">背后的道理</span>
+            <p>感光不是「环境有多亮」,而是「有多少光进到视网膜」。介质(晶状体)变浑浊、进光口径(瞳孔)变小,两者同时衰减。</p>
+          </div>
+          <div class="fb fb-how">
+            <span class="fb-label">落地细节</span>
+            <p>空间:阅读、做饭、卫浴区域的照度在常规标准上<strong>加倍</strong>;动线上消除暗区。<br>
+            界面:不要用大面积深底浅字(屏幕「发光」被浑浊晶状体散射成眩光),<strong>浅底深字是更稳的默认</strong>;深色模式对老人不是省电福利,常是可读性灾难。</p>
+          </div>
+        </div>
+
+        <div class="fact">
+          <h3><span class="fact-tag">知识点</span>晶状体黄化:蓝紫色最先「消失」</h3>
+          <div class="fb fb-fact">
+            <span class="fb-label">知识点</span>
+            <p>晶状体随年龄变黄,对短波长光(蓝、紫)的透过率大幅下降。老年人分不清深蓝与黑、淡蓝与淡灰、紫色与蓝色——这些恰好是很多产品最爱用的「高级色」。</p>
+          </div>
+          <div class="fb fb-why">
+            <span class="fb-label">背后的道理</span>
+            <p>黄色滤镜效应:短波蓝紫光被吸收得最多,色相辨别向「红黄」偏移;同时整体色饱和度感受下降。</p>
+          </div>
+          <div class="fb fb-how">
+            <span class="fb-label">落地细节</span>
+            <p>关键操作与状态信息<strong>不依赖蓝紫色</strong>;用深绿、深红、黑等长波长高对比色承载语义;<strong>颜色永远叠加文字或图标冗余</strong>(「红色圆点 + 已停机」)。</p>
+          </div>
+          <div class="fb fb-pit">
+            <span class="fb-label">常见误区</span>
+            <p>「颜色搭配看着舒服就行」——在年轻人的屏幕上成立的低饱和蓝紫渐变,对老人是直接丢失信息。配色先过对比度公式(见 <a href="digital.html">③ 数字产品</a>),再谈审美。</p>
+          </div>
+        </div>
+
+        <div class="fact">
+          <h3><span class="fact-tag">知识点</span>对比敏感度:灰字、水印全部失效</h3>
+          <div class="fb fb-fact">
+            <span class="fb-label">知识点</span>
+            <p>老年人不仅「看不清小的」,更「分不开近的」——对相邻灰阶、低对比文字的分辨能力显著下降。浅灰辅助文字、半透明水印、占位符标签,对他们往往是<strong>物理上不可见</strong>。</p>
+          </div>
+          <div class="fb fb-how">
+            <span class="fb-label">落地细节</span>
+            <p>正文对比度 ≥ 4.5:1(WCAG AA),大标题与图形 ≥ 3:1,争取 7:1(AAA);<strong>禁止把说明文字做成浅灰小字</strong>;输入框的标签必须常显,不能只在占位符里。</p>
+          </div>
+        </div>
+
+        <div class="fact">
+          <h3><span class="fact-tag">知识点</span>老花与暗适应:看近费劲、转换慢</h3>
+          <div class="fb fb-fact">
+            <span class="fb-label">知识点</span>
+            <p>睫状肌调节能力下降,看近处需要更远距离、更多时间才能对上焦;从亮处进暗处(或反之)的适应时间明显变长。</p>
+          </div>
+          <div class="fb fb-how">
+            <span class="fb-label">落地细节</span>
+            <p>界面:手机默认阅读距离约 40cm,字号太小会直接放弃;<strong>进门处的照度要缓变</strong>(玄关、走廊、卫生间装感应灯),避免「摸黑走一段」——老人跌倒高发场景正是夜间起夜的暗适应空窗期。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="hearing">
+        <h2><span class="h2-num">2.</span>听觉:高频先退,辅音先丢</h2>
+        <div class="fact">
+          <h3><span class="fact-tag">知识点</span>老年性耳聋从高频开始</h3>
+          <div class="fb fb-fact">
+            <span class="fb-label">知识点</span>
+            <p>听力损失从高频(约 4kHz 以上)开始且不可逆,而汉语声调辨别和辅音(如 s、sh、z、c)的能量集中在高频段——所以老人常见的抱怨不是「听不见」,而是「听得见但听不清」。</p>
+          </div>
+          <div class="fb fb-why">
+            <span class="fb-label">背后的道理</span>
+            <p>耳蜗底部的毛细胞最先损耗(负责高频);「听见」是音量问题,「听清」是频率分辨问题,加大音量解决不了后者。</p>
+          </div>
+          <div class="fb fb-how">
+            <span class="fb-label">落地细节</span>
+            <p>提示音、闹钟、门铃选中<strong>中低频</strong>而非尖锐高音;语音播报<strong>放慢语速、吐字清晰</strong>,重要信息提供<strong>字幕与文字记录</strong>;环境噪声大的场所(市场、医院大厅)提供视觉信息冗余。</p>
+          </div>
+          <div class="fb fb-pit">
+            <span class="fb-label">常见误区</span>
+            <p>把音量开到最大当适老化。响度不等于清晰度,大音量反而加速不适。正确做法是「慢 + 净 + 字」:慢语速、降噪、配字幕。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="motor">
+        <h2><span class="h2-num">3.</span>运动:手部精细动作与平衡</h2>
+        <div class="fact">
+          <h3><span class="fact-tag">知识点</span>握力减半、震颤、关节变僵</h3>
+          <div class="fb fb-fact">
+            <span class="fb-label">知识点</span>
+            <p>握力与捏力到 70 岁后大约只剩青壮年的一半,手部出现生理性震颤,指关节活动度下降;下肢肌力与平衡能力同步退化,我国 65 岁以上老人因伤害死亡的第一位原因是<strong>跌倒</strong>。</p>
+          </div>
+          <div class="fb fb-how">
+            <span class="fb-label">落地细节</span>
+            <p>界面:点击目标 ≥ 44×44px 且间距充分;避免双击、长按、双指捏合等精细手势,所有功能提供<strong>单指点击替代</strong>;危险操作物理隔离,防误触。<br>
+            空间:全程有处可扶(扶手连续、高度合理);地面防滑、无高差;坐姿操作优先——「能坐下做的事,别让老人站着做」。</p>
+          </div>
+          <div class="fb fb-why">
+            <span class="fb-label">背后的道理</span>
+            <p>震颤导致落点在目标附近晃动,目标越小、间距越密,误触概率越高;一次误触(比如点错「取消支付」)的挫败感会直接终结整个任务。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="cognition">
+        <h2><span class="h2-num">4.</span>认知:慢下来的处理器,没丢下的经验</h2>
+        <div class="fact">
+          <h3><span class="fact-tag">知识点</span>处理速度与工作记忆下降,经验(晶体智力)保留</h3>
+          <div class="fb fb-fact">
+            <span class="fb-label">知识点</span>
+            <p>信息处理速度变慢,工作记忆容量缩小(研究提示约为年轻人的一半到三分之二),前瞻记忆(记得「待会儿要做某事」)明显变差;但词汇、常识、阅历等<strong>晶体智力基本保持</strong>。</p>
+          </div>
+          <div class="fb fb-why">
+            <span class="fb-label">背后的道理</span>
+            <p>这意味着:<strong>老人不是学不会,而是「同时记不住」。</strong>一次性出现 5 个新概念,工作记忆立刻溢出;而凡是能挂靠到既有经验的东西(电话、存折、电视遥控器的隐喻)他们都学得会。</p>
+          </div>
+          <div class="fb fb-how">
+            <span class="fb-label">落地细节</span>
+            <p>一次只做一件事:一屏一个主任务,流程拆成「一步一确认」;<strong>永远显示「我在哪、能回哪」</strong>;术语前后一致(同一动作永远叫同一个名字);新概念挂靠旧经验(「像发短信一样」);<strong>不搞限时操作</strong>,倒计时对工作记忆退化者是双重惩罚。</p>
+          </div>
+          <div class="fb fb-pit">
+            <span class="fb-label">常见误区</span>
+            <p>把「界面简洁」做成「信息缺失」。减法减的是<strong>步骤和干扰</strong>,不是必要信息——把必要信息藏进二级页,老人会认为「东西丢了」。</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="emotion">
+        <h2><span class="h2-num">5.</span>情感与自尊:最容易被设计伤害的部分</h2>
+        <div class="prose">
+          <p>老年用户普遍存在三种心理状态,它们直接决定设计成败:怕<strong>麻烦子女</strong>(遇到问题宁可放弃也不求助)、怕<strong>学不会</strong>(一次失败即放弃,且归因于「我太笨」而不是「设计太差」)、抗拒<strong>老年标签</strong>(大红大紫「敬老版」会被嫌弃)。</p>
+        </div>
+        <div class="callout callout-tip">
+          <span class="callout-title">设计思路</span>
+          <p>把「求助成本」降到零(随时可见的人工客服 / 一键呼叫子女协助),把「失败成本」降到零(可撤销、可重来、不嘲讽),把「标签感」降到零(适老样式做成正常的、体面的样子)。<strong>老人要的是「我自己能行」,设计要成全这句话。</strong></p>
+        </div>
+      </section>
+
+      <section id="sim">
+        <h2><span class="h2-num">6.</span>互动演示:老年视觉模拟器</h2>
+        <div class="prose">
+          <p>下面是一部手机上的挂号应用示意。切换模拟模式,直观感受不同视觉状态下的信息丢失。模拟是近似效果,目的是建立共情,不代表真实病感。</p>
+        </div>
+
+        <div class="demo">
+          <h3><span class="demo-tag">互动演示</span>老年视觉模拟器</h3>
+          <p class="demo-hint">点击切换模式(按钮均可键盘操作),观察左侧界面与说明文字。</p>
+          <div class="sim-btns" role="group" aria-label="选择视觉模拟模式">
+            <button type="button" class="sim-btn" data-sim="none" aria-pressed="true">正常视力</button>
+            <button type="button" class="sim-btn" data-sim="blur" aria-pressed="false">老花(近景模糊)</button>
+            <button type="button" class="sim-btn" data-sim="cataract" aria-pressed="false">白内障(模糊泛黄)</button>
+            <button type="button" class="sim-btn" data-sim="contrast" aria-pressed="false">对比敏感度下降</button>
+            <button type="button" class="sim-btn" data-sim="glare" aria-pressed="false">夜间眩光</button>
+          </div>
+          <div class="sim-stage" id="simStage" data-sim="none">
+            <div class="phone" role="img" aria-label="示意:医院挂号应用的手机界面,包含就诊人、科室信息与立即预约按钮">
+              <div class="phone-screen">
+                <div class="m-head">掌上医院</div>
+                <div class="m-body">
+                  <p class="m-title">预约挂号</p>
+                  <div class="m-card">
+                    <span class="m-label">就诊人</span>
+                    <span class="m-value">王建国 · 68 岁</span>
+                  </div>
+                  <div class="m-card">
+                    <span class="m-label">科室</span>
+                    <span class="m-value">心血管内科 · 周四上午</span>
+                  </div>
+                  <div class="m-btn-main" aria-hidden="true">立即预约</div>
+                  <p class="m-tip">请携带医保卡,提前 30 分钟到院取号</p>
+                </div>
+                <div class="m-tab" aria-hidden="true"><span>首页</span><span>挂号</span><span>我的</span></div>
+              </div>
+            </div>
+            <p class="sim-note" id="simNote">正常视力下的界面。对照下面的其他模式,观察信息在哪一刻开始丢失。</p>
+          </div>
+        </div>
+
+        <div class="callout callout-warn">
+          <span class="callout-title">本章小结</span>
+          <p>四类能力变化对应四类设计动作:<strong>视觉衰减 → 放大与对比;听力衰减 → 中低频与字幕冗余;精细动作退化 → 大目标与单指操作;认知减速 → 一步一事与不设时限。</strong>而贯穿始终的第五条是:保持尊重。下一章把这些观察收敛成可执行的原则与参数。</p>
+        </div>
+      </section>
+
+      <nav class="pager" aria-label="章节翻页">
+        <a class="prev" href="index.html"><span class="pager-dir">上一章</span><span class="pager-title">总览:什么是适老化设计</span></a>
+        <a class="next" href="principles.html"><span class="pager-dir">下一章</span><span class="pager-title">② 设计原则与核心指标</span></a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>适老化设计手册</strong> — 用设计敬老,让产品与环境对每个人友好。</p>
+    <p class="foot-note">本站全部页面即适老化示范:支持字号调节、高对比模式、键盘完整操作;内容参数为设计参考,落地请以现行国家规范与实测为准。</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-font="base" data-contrast="normal">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>⑤ 标准与规范 · 适老化设计手册</title>
+<meta name="description" content="适老化设计相关标准:WCAG 关键条目、GB 55019 强制规范、JGJ 450 老年人照料设施标准、工信部 App 适老化通用设计规范要点与政策时间线。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230a5c42'/%3E%3Ctext x='50' y='70' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3E适%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<header class="site-header">
+  <div class="topbar wrap">
+    <p class="brand"><a href="index.html">适老化设计手册<span class="brand-en">Age-Friendly Design</span></a></p>
+    <div class="controls" role="group" aria-label="阅读设置(这也是本站的适老化示范)">
+      <span class="controls-label">字号</span>
+      <button type="button" class="ctrl-btn font-btn" data-font="base" aria-pressed="true">标准</button>
+      <button type="button" class="ctrl-btn font-btn" data-font="large" aria-pressed="false">大</button>
+      <button type="button" class="ctrl-btn font-btn" data-font="xlarge" aria-pressed="false">特大</button>
+      <button type="button" class="ctrl-btn" id="contrastBtn" aria-pressed="false">高对比模式</button>
+    </div>
+  </div>
+  <nav class="site-nav wrap" aria-label="章节导航">
+    <a href="index.html">总览</a>
+    <a href="aging.html">① 认识用户</a>
+    <a href="principles.html">② 设计原则</a>
+    <a href="digital.html">③ 数字产品</a>
+    <a href="space.html">④ 空间环境</a>
+    <a href="standards.html" aria-current="page">⑤ 标准规范</a>
+    <a href="cases.html">⑥ 案例拆解</a>
+    <a href="process.html">⑦ 流程自查</a>
+  </nav>
+</header>
+<p id="liveStatus" class="visually-hidden" aria-live="polite"></p>
+
+<main id="main">
+  <div class="wrap">
+    <div class="page-head">
+      <span class="kicker">第五章 · 标准与规范</span>
+      <h1>标准与规范:底线清单,不是天花板</h1>
+      <p class="lede">标准解决三件事:争论时拍板(「44px 是规范要求」)、验收时有据(逐条可打勾)、设计系统设默认值(组件天生合规)。本章梳理国内外核心标准的关键条目与使用方法。</p>
+    </div>
+
+    <article>
+      <div class="toc">
+        <p class="toc-title">本章导读</p>
+        <ol>
+          <li><a href="#wcag">国际:WCAG 与 POUR 四原则</a></li>
+          <li><a href="#cn-build">中国:建筑与环境类标准</a></li>
+          <li><a href="#cn-digital">中国:信息技术与 App 适老化规范</a></li>
+          <li><a href="#timeline">政策时间线</a></li>
+          <li><a href="#verify">如何用标准做验收</a></li>
+        </ol>
+      </div>
+
+      <section id="wcag">
+        <h2><span class="h2-num">1.</span>国际:WCAG 与 POUR 四原则</h2>
+        <div class="prose">
+          <p><strong>WCAG(Web Content Accessibility Guidelines)</strong>由 W3C 发布,是全球网页与 App 无障碍的事实标准,现行版本 2.1(2018)与 2.2(2023),国内标准 GB/T 37668 也以其为基础。WCAG 的组织方式是 <strong>POUR 四原则 → 准则 → 可测试的成功标准(A / AA / AAA 三级)</strong>。</p>
+        </div>
+        <div class="table-scroll">
+          <table class="spec">
+            <caption>WCAG POUR 四原则</caption>
+            <thead><tr><th scope="col">原则</th><th scope="col">一句话要求</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">P 可感知</th><td>信息不能只靠单一感官传达——看得见也要听得出,听得到也要看得到</td></tr>
+              <tr><th scope="row">O 可操作</th><td>所有功能键盘能完成,不依赖精准手势,给足操作时间</td></tr>
+              <tr><th scope="row">U 可理解</th><td>文字可读、可预测;出错时告诉用户原因与改法</td></tr>
+              <tr><th scope="row">R 健壮</th><td>代码语义化,与读屏等辅助技术兼容</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-scroll">
+          <table class="spec">
+            <caption>适老化最常引用的 WCAG 条目</caption>
+            <thead>
+              <tr><th scope="col">条目</th><th scope="col">要求</th><th scope="col">关键参数</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">1.4.3 对比度(最低)</th><td>文字与背景对比度</td><td>正文 ≥ 4.5:1;大字(≥24px 或 ≥18.7px 粗体)≥ 3:1(AA)</td></tr>
+              <tr><th scope="row">1.4.6 对比度(增强)</th><td>更严的对比</td><td>正文 ≥ 7:1;大字 ≥ 4.5:1(AAA)</td></tr>
+              <tr><th scope="row">1.4.11 非文本对比</th><td>UI 组件与图形必须有可辨边界</td><td>≥ 3:1(AA)</td></tr>
+              <tr><th scope="row">1.4.12 文字间距</th><td>用户调整间距时不破版</td><td>行距、字距、段距留出放大余量</td></tr>
+              <tr><th scope="row">2.2.1 计时可调整</th><td>不搞死倒计时</td><td>可延长、可关闭、可续期(A)</td></tr>
+              <tr><th scope="row">2.4.7 焦点可见</th><td>键盘焦点必须看得见</td><td>明显描边(AA)</td></tr>
+              <tr><th scope="row">2.5.5 目标尺寸(增强)</th><td>点击目标足够大</td><td>≥ 44×44 CSS px(AAA)</td></tr>
+              <tr><th scope="row">2.5.8 目标尺寸(最低)</th><td>WCAG 2.2 新增</td><td>≥ 24×24 CSS px,或间距等效(AA)</td></tr>
+              <tr><th scope="row">3.3.2 标签或说明</th><td>输入需要标签与提示</td><td>标签常显(A)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout callout-tip">
+          <span class="callout-title">使用建议</span>
+          <p>商业项目把 <strong>AA 当底线、AAA 当适老增强</strong>。注意 WCAG 是国际建议标准,在国内工程中,更硬的依据是下面的强制性国标与部委规范。</p>
+        </div>
+      </section>
+
+      <section id="cn-build">
+        <h2><span class="h2-num">2.</span>中国:建筑与环境类标准</h2>
+        <div class="table-scroll">
+          <table class="spec">
+            <caption>建筑适老化与无障碍核心标准</caption>
+            <thead>
+              <tr><th scope="col">标准</th><th scope="col">性质</th><th scope="col">适用与要点</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">GB 55019-2021《建筑与市政工程无障碍通用规范》</th><td><strong>强制性</strong>,2022 年 4 月 1 日起施行</td><td>全文强制执行,覆盖无障碍通行、服务设施、信息交流;新建与改扩建工程必须满足,是当前最有牙齿的依据</td></tr>
+              <tr><th scope="row">GB 50763-2012《无障碍设计规范》</th><td>国家标准</td><td>坡道、门宽、扶手、无障碍卫生间等基础尺寸的常用出处</td></tr>
+              <tr><th scope="row">JGJ 450-2018《老年人照料设施建筑设计标准》</th><td>行业标准</td><td>养老院、照料中心的设计:居室、卫浴、走廊宽度、双层扶手、紧急呼叫、消防疏散等</td></tr>
+              <tr><th scope="row">GB 50340《老年人居住建筑设计规范》</th><td>国家标准</td><td>老年住宅与公寓:户内尺寸、设备配置、日照与通风等</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="prose">家装与旧改场景虽然多数不受强制规范约束,但上表数值(回转直径、门宽、扶手高度、拉绳做法)正是「家用版适老化」的可靠参照——第四章的速查表即由此化出。</p>
+      </section>
+
+      <section id="cn-digital">
+        <h2><span class="h2-num">3.</span>中国:信息技术与 App 适老化规范</h2>
+        <div class="table-scroll">
+          <table class="spec">
+            <caption>信息技术类标准与部委规范</caption>
+            <thead>
+              <tr><th scope="col">标准 / 文件</th><th scope="col">性质</th><th scope="col">适用与要点</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">GB/T 37668-2019《信息技术 互联网内容无障碍可访问性技术要求与测试方法》</th><td>推荐性国标</td><td>对标 WCAG,规定网页与移动应用的感知、操作、理解技术要求及测试方法</td></tr>
+              <tr><th scope="row">《互联网网站适老化通用设计规范》《移动互联网应用(App)适老化通用设计规范》(工信部,2021)</th><td>部委规范,配合专项行动</td><td>见下表核心要求;首批覆盖 115 个网站、43 款 App</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-scroll">
+          <table class="spec">
+            <caption>工信部 App / 网站适老化规范核心要求(摘要)</caption>
+            <thead>
+              <tr><th scope="col">要求</th><th scope="col">通俗解释</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">字体放大不乱版</th><td>支持系统级大字体,界面自适应不错位、不截断</td></tr>
+              <tr><th scope="row">无广告插件与诱导</th><td>适老版本不得出现广告插件、诱导下载 / 点赞类悬浮按钮,「摇一摇」跳转受限</td></tr>
+              <tr><th scope="row">验证码可替代</th><td>提供短信、语音等替代方式,不拿扭曲图形码「考眼力」</td></tr>
+              <tr><th scope="row">一键进入关怀模式</th><td>提供「长辈模式 / 关怀模式」显式入口,切换简单、可退出</td></tr>
+              <tr><th scope="row">语音辅助</th><td>提供朗读等语音辅助能力,重要信息可听</td></tr>
+              <tr><th scope="row">保留电话等传统渠道</th><td>线上改不了的,人工客服、线下渠道必须兜底</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="timeline">
+        <h2><span class="h2-num">4.</span>政策时间线</h2>
+        <ul>
+          <li><strong>2019</strong> — GB/T 37668 发布,互联网无障碍有了国标技术依据。</li>
+          <li><strong>2020 年 11 月</strong> — 国办印发《关于切实解决老年人运用智能技术困难的实施方案》,适老化上升为国家行动。</li>
+          <li><strong>2021 年</strong> — 工信部启动互联网应用适老化及无障碍改造专项行动,发布网站与 App 两个通用设计规范;微信、支付宝等上线「关怀模式 / 长辈模式」。</li>
+          <li><strong>2022 年 4 月</strong> — GB 55019《建筑与市政工程无障碍通用规范》强制实施,建筑无障碍进入「全文强制」时代。</li>
+          <li><strong>「十四五」期间</strong> — 老龄事业发展规划与养老服务体系规划持续推进居家适老化改造,多地将困难老人家庭改造纳入政府实事项目。</li>
+        </ul>
+      </section>
+
+      <section id="verify">
+        <h2><span class="h2-num">5.</span>如何用标准做验收</h2>
+        <div class="prose">
+          <p>标准读一遍记不住,也记不住没关系——验收时逐条走查即可。一套最小可执行的流程:</p>
+          <ol>
+            <li><strong>工具实测(30 分钟)</strong>:对比度检查器逐页扫描文字与控件(本站 ③ 章 8 节有演示);浏览器缩放 200% 检查是否破版(对应「字体放大不乱版」)。</li>
+            <li><strong>键盘走查(30 分钟)</strong>:只用 Tab / Enter 完成核心任务,检查焦点是否可见、有无键盘陷阱、有无「悬停才出现」的内容。</li>
+            <li><strong>读屏走查(1 小时)</strong>:开启系统读屏(如 iOS 旁白 / Android TalkBack),蒙眼完成「查余额」「挂号」两个任务,记录卡点。</li>
+            <li><strong>热区抽查</strong>:开发者选项打开「显示点按操作反馈 / 布局边界」,抽查高频按钮实际热区尺寸。</li>
+            <li><strong>真人测试</strong>:按 <a href="process.html">⑦ 流程自查</a>的方法找 8~10 位 60 岁以上用户跑真实任务,工具测不出「看懂了但不敢点」这类问题。</li>
+          </ol>
+          <div class="callout callout-warn">
+            <span class="callout-title">验收结论分三档</span>
+            <p><strong>不达标</strong>(违反强制规范 / AA 底线,必须改)、<strong>建议改进</strong>(AA 达标但体验差,排期改)、<strong>加分项</strong>(AAA 或超出规范的贴心设计,记录并表扬)。把三档写进验收模板,避免「全红全绿」的一刀切。</p>
+          </div>
+        </div>
+      </section>
+
+      <nav class="pager" aria-label="章节翻页">
+        <a class="prev" href="space.html"><span class="pager-dir">上一章</span><span class="pager-title">④ 空间环境适老化</span></a>
+        <a class="next" href="cases.html"><span class="pager-dir">下一章</span><span class="pager-title">⑥ 案例拆解</span></a>
+      </nav>
+    </article>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>适老化设计手册</strong> — 用设计敬老,让产品与环境对每个人友好。</p>
+    <p class="foot-note">本站全部页面即适老化示范:支持字号调节、高对比模式、键盘完整操作;内容参数为设计参考,落地请以现行国家规范与实测为准。</p>
+  </div>
+</footer>
+</body>
+</html>
